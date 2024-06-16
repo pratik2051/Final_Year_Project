@@ -1,12 +1,12 @@
 package com.example.studentproject.repository;
 
 
-import com.example.studentproject.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import com.example.studentproject.model.User;
+
+
+import java.util.Optional;
 
 public interface UserRepository extends JpaRepository<User, Integer> {
-	User findByUsernameAndPassword(String un, String psw);
-
-
-
+	Optional<User>findByEmail(String email);
 }
