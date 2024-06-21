@@ -1,11 +1,10 @@
 package com.example.studentproject.controller;
 
-import com.example.studentproject.model.User;
 import com.example.studentproject.repository.UserRepository;
+import io.swagger.v3.oas.annotations.Hidden;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.util.DigestUtils;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -38,7 +37,45 @@ public class LoginController {
 //    }
 
 
+    @RestController
+    @RequestMapping("/api/v1/admin")
+    @PreAuthorize("hasRole('ADMIN')")
+    public static class AdminController {
 
+        @GetMapping
+        @PreAuthorize("hasAuthority('admin:read')")
+        public String get() {
+            return "GET:: admin controller";
+        }
+        @PostMapping
+        @PreAuthorize("hasAuthority('admin:create')")
+        @Hidden
+        public String post() {
+            return "POST:: admin controller";
+        }
+        @PutMapping
+        @PreAuthorize("hasAuthority('admin:update')")
+        @Hidden
+        public String put() {
+            return "PUT:: admin controller";
+        }
+        @DeleteMapping
+        @PreAuthorize("hasAuthority('admin:delete')")
+        @Hidden
+        public String delete() {
+            return "DELETE:: admin controller";
+        }
+    }
 
+    @RestController
+    @RequestMapping("/api/v1/demo-controller")
+    @Hidden
+    public static class DemoController {
 
+      @GetMapping
+      public ResponseEntity<String> sayHello() {
+        return ResponseEntity.ok("Hello from secured endpoint");
+      }
+
+    }
 }
