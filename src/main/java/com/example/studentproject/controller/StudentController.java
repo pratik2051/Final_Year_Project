@@ -3,6 +3,7 @@ package com.example.studentproject.controller;
 import com.example.studentproject.model.Student;
 import com.example.studentproject.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -12,6 +13,8 @@ public class StudentController {
 
     @Autowired
     private StudentService studentService;
+    @Autowired
+    private SecurityProperties securityProperties;
 
     @PostMapping("/addstudent")
     public Student saveStudent( @RequestBody Student student) {
@@ -24,7 +27,7 @@ public class StudentController {
     }
 
 //    public Student findStudentByID(int id){
-//        return service.getStudentById(id);
+//        return StudentService.getStudentById(id);
 //    }
 
     @DeleteMapping("/student/{id}")

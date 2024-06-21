@@ -22,10 +22,10 @@ public class LoginController {
     public String showiLogin() {
         return "loginForm";
     }
-//
+
 //    @PostMapping("/login")
-////    public String doLogin(@ModelAttribute User user, Model model) {
-//
+//    public String doLogin(@ModelAttribute User user, Model model) {
+
 //        user.setPassword(DigestUtils.md5DigestAsHex(user.getPassword().getBytes()));
 //        User usr=userRepo.findByUsernameAndPassword(user.getUsername(), user.getPassword());
 //        if(usr !=null) {
