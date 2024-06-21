@@ -14,12 +14,12 @@ public class LoginController {
     @Autowired
     private UserRepository userRepo;
 
-    @GetMapping("/")
+    @GetMapping("/login")
     public String showLogin() {
         return "index";
     }
-    @GetMapping("/login")
-    public String showiLogin() {
+    @GetMapping("/signup")
+    public String Signup() {
         return "loginForm";
     }
 
