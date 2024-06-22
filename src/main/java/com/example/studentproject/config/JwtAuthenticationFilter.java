@@ -1,5 +1,6 @@
 package com.example.studentproject.config;
 
+
 import com.example.studentproject.token.TokenRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -16,7 +17,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
-
 
 @Component
 @RequiredArgsConstructor
