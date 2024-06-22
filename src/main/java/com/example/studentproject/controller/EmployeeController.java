@@ -7,17 +7,17 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping
-public class StoreController {
+public class EmployeeController {
 
     @RestController
-    @RequestMapping("/api/v1/management")
-    @Tag(name = "Management")
+    @RequestMapping("/api/v1/employee")
+    @Tag(name = "employee")
     public static class ManagementController {
 
 
         @Operation(
-                description = "Get endpoint for manager",
-                summary = "This is a summary for management get endpoint",
+                description = "Get endpoint for employee",
+                summary = "This is a summary for employee get endpoint",
                 responses = {
                         @ApiResponse(
                                 description = "Success",
@@ -32,19 +32,19 @@ public class StoreController {
         )
         @GetMapping
         public String get() {
-            return "GET:: management controller";
+            return "GET:: employee controller";
         }
         @PostMapping
         public String post() {
-            return "POST:: management controller";
+            return "POST:: employee controller";
         }
         @PutMapping
         public String put() {
-            return "PUT:: management controller";
+            return "PUT:: employee controller";
         }
         @DeleteMapping
         public String delete() {
-            return "DELETE:: management controller";
+            return "DELETE:: employee controller";
         }
     }
 }
