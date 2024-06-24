@@ -1,4 +1,4 @@
-package com.example.studentproject.auth;
+package com.example.studentproject.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
